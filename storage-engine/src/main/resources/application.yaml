@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /storage-svc/rest/api/v1.0
+  port: ${APP_PORT:8081}
+
+spring:
+  application:
+    name: ${ENV_STORAGE_ENGINE_SERVICE_NAME:STORAGE-ENGINE}
+  servlet:
+    multipart:
+      location: ${ENV_DEFAULT_MEDIA_STORE_PATH:/Users/abdelhalimbadr/IdeaProjects/storage-hub/media/store/}
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+
+default:
+  media:
+    store:
+      path: ${ENV_DEFAULT_MEDIA_STORE_PATH:/Users/abdelhalimbadr/IdeaProjects/storage-hub/media/store/}
